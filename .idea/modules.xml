@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/pjwstk-nai-shit.iml" filepath="$PROJECT_DIR$/pjwstk-nai-shit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pjwstk-nai-neuralnetwork.iml" filepath="$PROJECT_DIR$/pjwstk-nai-neuralnetwork.iml" />
     </modules>
   </component>
 </project>
