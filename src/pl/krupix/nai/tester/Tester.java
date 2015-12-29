@@ -20,14 +20,16 @@ public class Tester {
 
     private String testFilePath = "/Users/krupix/KruPiX/dev/git/pjwstk-nai-shit/test/test_data.txt";
     private String trainFilePath = "/Users/krupix/KruPiX/dev/git/pjwstk-nai-shit/test/train_data.txt";
+    private String wrongTestFilePath = "/Users/krupix/KruPiX/dev/git/pjwstk-nai-shit/test/wrong_data.txt";
 
     private Scanner samplesReader;
     private NeuralNetwork neuralNetwork;
-    private ArrayList<Integer> resultCollector;
+    private ArrayList<Integer> resultCollector, resultCollectorForIncorrectData;
 
     public Tester(NeuralNetwork neuralNetwork) throws FileNotFoundException {
         this.neuralNetwork = neuralNetwork;
         resultCollector = new ArrayList<Integer>();
+        resultCollectorForIncorrectData = new ArrayList<Integer>();
         initSamples();
     }
 
@@ -47,10 +49,15 @@ public class Tester {
     }
 
     public void testNetwork() throws IOException {
+        testNetworkFor(testFilePath, resultCollector);
+        testNetworkFor(wrongTestFilePath, resultCollectorForIncorrectData);
+    }
+
+    private void testNetworkFor(String filePath, ArrayList<Integer> resultCollector) {
 
         try {
 
-            File file = new File(testFilePath);
+            File file = new File(filePath);
             Scanner input = new Scanner(file);
 
             int result = 0;
@@ -72,8 +79,8 @@ public class Tester {
             e.printStackTrace();
         }
 
-
     }
+
 
 
     public boolean hasMoreTrainingSamples() {
@@ -102,5 +109,9 @@ public class Tester {
 
     public ArrayList<Integer> getResultCollector() {
         return resultCollector;
+    }
+
+    public ArrayList<Integer> getResultCollectorForIncorrectData() {
+        return resultCollectorForIncorrectData;
     }
 }

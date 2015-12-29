@@ -13,7 +13,7 @@ public class NeuralNetwork {
 
     static Logger log = Logger.getLogger(NeuralNetwork.class);
 
-    public static float LEARNING_CONSTANT = 0.01f;
+    public static float LEARNING_CONSTANT = 0.1f;
     public static int INPUTS_NUMBER = 9;
     public static int SECOND_LAYER_PERCEPTON_INPUTS_NUMBER = 5;
 

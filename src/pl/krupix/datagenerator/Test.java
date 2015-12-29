@@ -10,6 +10,13 @@ public class Test {
 
     public static void main(String args[]) {
 
+//        generateSamples();
+        generateRandomSamples();
+
+    }
+
+    private static void generateSamples() {
+
         SampleDataGenerator sampleDataGenerator = new SampleDataGenerator();
 
         int[] indexDigitsTab = new int[]{1, 1, 5, 6, 2};
@@ -29,9 +36,30 @@ public class Test {
             e.printStackTrace();
         }
 
+    }
 
+    private static void generateRandomSamples() {
+
+        SampleDataGenerator sampleDataGenerator = new SampleDataGenerator();
+
+        String generatedDigit;
+
+        try {
+            PrintWriter out = new PrintWriter("/Users/krupix/KruPiX/dev/git/pjwstk-nai-shit/test/wrong_data.txt");
+            for (int  i = 0; i < 100; i++) {
+                generatedDigit = sampleDataGenerator.generateRandom();
+                System.out.println("Generated => " + generatedDigit);
+//                out.println(generatedDigit + " 1");
+                out.println(generatedDigit);
+            }
+
+            out.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
+
 
 
 }

@@ -18,14 +18,7 @@ public class Controller {
     private NeuralNetwork neuralNetwork;
 
     public Controller() {
-
         neuralNetwork = new NeuralNetwork();
-        init();
-    }
-
-
-    private void init() {
-
     }
 
 
@@ -37,7 +30,7 @@ public class Controller {
                 tester.testNetwork(); // print % of correct samples
                 tester.trainWithSingleSample();
             }
-
+            log.info("Testing network finished. Wrong Data Result: \n" + tester.getResultCollectorForIncorrectData());
             log.info("Testing network finished. Results: \n" + tester.getResultCollector());
         } catch (Exception e) {
             log.error(e);

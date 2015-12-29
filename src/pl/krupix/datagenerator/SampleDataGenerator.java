@@ -15,25 +15,48 @@ public class SampleDataGenerator {
         String result = "";
 
         for (int indexDigit : indexDigitsTab) {
-
             result += generateDigit(indexDigit) + " ";
-
         }
 
         return result;
     }
 
 
-    public String generateDigit(int digit) {
+    private String generateDigit(int digit) {
 
         int[] digitTab = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         while (digit != getDigitTabSum(digitTab)) {
-
             int pos = new Random().nextInt(9);
-
             digitTab[pos] = 1;
+        }
 
+        return tabToString(digitTab);
+
+    }
+
+
+    public String generateRandom() {
+
+        String result = "";
+
+        for (int i = 0; i < 5; i++) {
+            result += generateRandomDigit() + " ";
+        }
+
+        return result;
+    }
+
+
+   private String generateRandomDigit() {
+
+        int[] digitTab = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+        int digit = new Random().nextInt(9);
+
+        while (digit != getDigitTabSum(digitTab)) {
+            int pos = new Random().nextInt(9);
+            digitTab[pos] = 1;
         }
 
         return tabToString(digitTab);
