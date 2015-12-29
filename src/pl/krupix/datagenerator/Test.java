@@ -20,7 +20,8 @@ public class Test {
             for (int  i = 0; i < 100; i++) {
                 generatedDigit = sampleDataGenerator.generate(indexDigitsTab);
                 System.out.println("Generated => " + generatedDigit);
-                out.println(generatedDigit + " 1");
+//                out.println(generatedDigit + " 1");
+                out.println(generatedDigit);
             }
 
             out.close();

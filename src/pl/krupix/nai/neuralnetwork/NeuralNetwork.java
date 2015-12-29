@@ -13,7 +13,7 @@ public class NeuralNetwork {
 
     static Logger log = Logger.getLogger(NeuralNetwork.class);
 
-    public static float LEARNING_CONSTANT = 0.4f;
+    public static float LEARNING_CONSTANT = 0.01f;
     public static int INPUTS_NUMBER = 9;
     public static int SECOND_LAYER_PERCEPTON_INPUTS_NUMBER = 5;
 
@@ -39,7 +39,7 @@ public class NeuralNetwork {
 
     public void use(ArrayList<float[]> inputsList) {
 
-        for (int i = 0; i < inputsList.size(); i++) {
+        for (int i = 0; i < SECOND_LAYER_PERCEPTON_INPUTS_NUMBER; i++) {
             perceptonsList.get(i).use(inputsList.get(i));
         }
 
@@ -76,4 +76,7 @@ public class NeuralNetwork {
         return tmpOutputTab;
     }
 
+    public float getOutput() {
+        return output;
+    }
 }

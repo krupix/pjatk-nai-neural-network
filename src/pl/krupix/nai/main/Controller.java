@@ -3,6 +3,7 @@ package pl.krupix.nai.main;
 
 import org.apache.log4j.Logger;
 import pl.krupix.nai.neuralnetwork.NeuralNetwork;
+import pl.krupix.nai.tester.Tester;
 
 import java.util.ArrayList;
 
@@ -29,8 +30,18 @@ public class Controller {
 
 
     public void control() {
+        try {
+            Tester tester = new Tester(neuralNetwork);
 
+            while (tester.hasMoreTrainingSamples()) {
+                tester.testNetwork(); // print % of correct samples
+                tester.trainWithSingleSample();
+            }
 
+            log.info("Testing network finished. Results: \n" + tester.getResultCollector());
+        } catch (Exception e) {
+            log.error(e);
+        }
 
 
     }
