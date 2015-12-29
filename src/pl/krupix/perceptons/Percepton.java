@@ -16,6 +16,8 @@ public class Percepton {
 
     public static int PERCEPTONS_COUNT;
     private int PERCEPTON_NUMER;
+    private float MIN_WEIGHT = -1,
+                  MAX_WEIGHT = 1;
 
     private String DEBUG_STRING = "Percepton[" + PERCEPTON_NUMER + "] ";
 
@@ -24,6 +26,7 @@ public class Percepton {
 
     private float output;
 
+
     public Percepton(int inputsNumber) {
 
         this.PERCEPTON_NUMER = ++PERCEPTONS_COUNT;
@@ -31,7 +34,7 @@ public class Percepton {
         weights = new float[inputsNumber];
 
         for (int i = 0; i < weights.length; i++) {
-            weights[i] = new Random().nextFloat();
+            weights[i] = new Random().nextFloat() * (MAX_WEIGHT - MIN_WEIGHT) + MIN_WEIGHT;
         }
 
         log.debug(DEBUG_STRING + "generated wages " + Utils.tabToString(weights));
@@ -39,8 +42,6 @@ public class Percepton {
     }
 
     public float use(float[] inputs) {
-
-
 
         this.inputs = inputs;
 
@@ -76,7 +77,7 @@ public class Percepton {
 
     public void train(float previousWeight) {
 
-        float error = (float)output - previousWeight;
+        float error = (float) output - previousWeight;
 
         for (int i = 0; i < weights.length; i++) {
             weights[i] += NeuralNetwork.LEARNING_CONSTANT * error * this.inputs[i];
