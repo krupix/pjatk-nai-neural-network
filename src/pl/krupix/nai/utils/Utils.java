@@ -1,4 +1,4 @@
-package pl.krupix.utils;
+package pl.krupix.nai.utils;
 
 /**
  * Created by krupix on 28.12.2015.

@@ -1,9 +1,8 @@
-package pl.krupix.perceptons;
+package pl.krupix.nai.perceptons;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.helpers.UtilLoggingLevel;
-import pl.krupix.neuralnetwork.NeuralNetwork;
-import pl.krupix.utils.Utils;
+import pl.krupix.nai.neuralnetwork.NeuralNetwork;
+import pl.krupix.nai.utils.Utils;
 
 import java.util.Random;
 

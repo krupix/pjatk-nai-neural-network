@@ -1,4 +1,4 @@
-package pl.krupix.perceptons;
+package pl.krupix.nai.perceptons;
 
 /**
  * Created by krupix on 29.12.2015.

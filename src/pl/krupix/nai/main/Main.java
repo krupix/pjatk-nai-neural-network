@@ -1,4 +1,4 @@
-package pl.krupix.main;
+package pl.krupix.nai.main;
 
 
 import org.apache.log4j.PropertyConfigurator;

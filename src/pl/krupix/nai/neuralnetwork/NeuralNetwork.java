@@ -1,8 +1,8 @@
-package pl.krupix.neuralnetwork;
+package pl.krupix.nai.neuralnetwork;
 
 import org.apache.log4j.Logger;
-import pl.krupix.perceptons.FinalPercepton;
-import pl.krupix.perceptons.Percepton;
+import pl.krupix.nai.perceptons.FinalPercepton;
+import pl.krupix.nai.perceptons.Percepton;
 
 import java.util.ArrayList;
 
@@ -29,6 +29,9 @@ public class NeuralNetwork {
     }
 
     public void init() {
+        perceptonsList.add(new Percepton(INPUTS_NUMBER));
+        perceptonsList.add(new Percepton(INPUTS_NUMBER));
+        perceptonsList.add(new Percepton(INPUTS_NUMBER));
         perceptonsList.add(new Percepton(INPUTS_NUMBER));
         perceptonsList.add(new Percepton(INPUTS_NUMBER));
         lastPercepton = new FinalPercepton(SECOND_LAYER_PERCEPTON_INPUTS_NUMBER);
