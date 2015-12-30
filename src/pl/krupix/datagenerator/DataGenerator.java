@@ -6,11 +6,14 @@ import java.io.PrintWriter;
 /**
  * Created by krupix on 29.12.2015.
  */
-public class Test {
+public class DataGenerator {
 
     public static void main(String args[]) {
 
+//        Generate samples for index number
 //        generateSamples();
+
+//        Generate samples with random numbers
         generateRandomSamples();
 
     }
@@ -23,7 +26,7 @@ public class Test {
         String generatedDigit;
 
         try {
-            PrintWriter out = new PrintWriter("/Users/krupix/KruPiX/dev/git/pjwstk-nai-shit/test/test_data.txt");
+            PrintWriter out = new PrintWriter("/Users/krupix/KruPiX/dev/git/pjatk-nai-neuralnetwork/test/test_data.txt");
             for (int  i = 0; i < 100; i++) {
                 generatedDigit = sampleDataGenerator.generate(indexDigitsTab);
                 System.out.println("Generated => " + generatedDigit);
@@ -45,7 +48,7 @@ public class Test {
         String generatedDigit;
 
         try {
-            PrintWriter out = new PrintWriter("/Users/krupix/KruPiX/dev/git/pjwstk-nai-shit/test/wrong_data.txt");
+            PrintWriter out = new PrintWriter("/Users/krupix/KruPiX/dev/git/pjatk-nai-neuralnetwork/test/wrong_data.txt");
             for (int  i = 0; i < 100; i++) {
                 generatedDigit = sampleDataGenerator.generateRandom();
                 System.out.println("Generated => " + generatedDigit);
